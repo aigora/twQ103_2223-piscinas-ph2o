@@ -4,8 +4,11 @@
 
 ## Integrantes del equipo
 Juan Mardomingo, joancrack
+
 Álvaro Rodríguez, 
+
 Alejandro Acedo, 
+
 Javier Rodríguez, xaaxee
 
 ## Objetivos del trabajo
