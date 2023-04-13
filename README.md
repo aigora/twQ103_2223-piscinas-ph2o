@@ -4,7 +4,6 @@
 
 ## Integrantes del equipo
 Juan Mardomingo, Álvaro Rodríguez, Alejandro Acedo, Javier Rodríguez.
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
 
 ## Objetivos del trabajo
 
