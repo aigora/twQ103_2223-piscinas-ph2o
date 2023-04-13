@@ -3,7 +3,10 @@
 [Descripción breve del proyecto a realizar (2-3 frases).]
 
 ## Integrantes del equipo
-Juan Mardomingo, Álvaro Rodríguez, Alejandro Acedo, Javier Rodríguez.
+Juan Mardomingo, joancrack
+Álvaro Rodríguez, 
+Alejandro Acedo, 
+Javier Rodríguez, xaaxee
 
 ## Objetivos del trabajo
 
