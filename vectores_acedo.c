@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define TAM_MAX 100
+#define TAM_MAX 200
 struct Tfuentes{
 	char fuente[200];
 	float nph;
@@ -9,7 +9,7 @@ struct Tfuentes{
 };
 int main(){
 	struct Tfuentes parametros[TAM_MAX];
-	int i, fuentes;
+	int i,a, fuentes=0,fuentephmax=0;
 	float media, nphMax;
 	FILE *fentrada, *fsalida;
 
@@ -22,21 +22,22 @@ int main(){
 	fsalida = fopen("resultados2.txt", "w"); // escibiendo
 		if (fsalida == NULL) {
 		printf("Error en la apertura del fichero de salida\n");
-		return 0;}
+		return 0;} 	
 		
 	i = 0;
-	while (fscanf(fentrada, "%c %f", &parametros[i].fuente, &parametros[i].nph) != EOF){
-		printf("%c %f\n", parametros[i].fuente, parametros[i].nph);
+	while (fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
+		fprintf(fsalida,"%s %.2f %d %d %d \n", parametros[i].fuente, parametros[i].nph, parametros[i].nconductividad, parametros[i].ncoliformes, parametros[i].nturbidez);
 		media += parametros[i].nph;
 		if (parametros[i].nph > nphMax) {
 			nphMax = parametros[i].nph;
+			a=i;
 		}
 		fuentes++;
 		i++;
 	}
 	
 	printf("Nota media es: %f\n", media / fuentes);
-	printf("Nota máxima es: %f\n", nphMax);
+	printf("El ph maximo es: %f que pertenece a la fuente %s\n", nphMax,parametros[a].fuente);
 
 	fclose(fentrada);
 	fclose(fsalida);

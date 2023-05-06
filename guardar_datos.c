@@ -6,12 +6,16 @@ int main(){
 	char parametros[100],nombreFichero[100];
 	FILE *fsalida;
 	
-	
+	#include <stdio.h>
+
+
+    printf("Introduce el nombre del archivo: ");
+    scanf("%s", nombreFichero);
 	printf("Introduce el numero de fuentes que quieres guardar: ");
 	scanf("%i",&nfuentes);
 	
 	
-	fsalida = fopen("resultadosssss.txt", "w"); // escibiendo
+	fsalida = fopen(nombreFichero, "w"); // escibiendo
 	if (fsalida == NULL) {
 	printf("Error en la apertura del fichero de salida\n");}
 	
@@ -25,10 +29,12 @@ int main(){
 	scanf("%f",&pH);
 	} while(pH<0||pH>14);
 	}
-	
-	fprintf(fsalida,"%.1f\t", pH);
+	fprintf(fsalida, "Fuentes\t pH\t Conductividad\t Turbidez\t Coliformes\t\n");
+	fprintf(fsalida,"%.1f\t\n", pH);
 	}
 	fclose(fsalida);
 	return 0;
+	
+	
 	}
 
