@@ -10,11 +10,10 @@ struct Tfuentes{
 int main(){
 	struct Tfuentes parametros[TAM_MAX];
 	char nombreFichero[200];
-	int elec,nfuentes,i,a, fuentes=0,fuentephmax=0;
-	float media, nphMax;
+	int elec,nfuentes,i,a,b, fuentes=0,fuentephmax=0;
+	float sumapH, nphMax=0,nphMin=14;
 	FILE *fentrada, *fsalida;
-
-    printf("Buenos dias,introduzca con numero lo que deseas hacer en este programa\n1.Guardar nuevos datos\n2.Guardar datos de un fichero en otro\n3.Comprobar un fichero\n");
+do{printf("\nBuenos dias,introduzca con numero lo que deseas hacer en este programa\n1.Guardar nuevos datos\n2.Guardar datos de un fichero en otro\n3.Comprobar un fichero\n4.Realizar estadisticas\nPulse cualquier otra tecla o numero para salir\n");
 	scanf("%d",&elec);
    switch(elec){
    	
@@ -75,29 +74,21 @@ int main(){
 	if (fsalida == NULL) {
 	printf("Error en la apertura del fichero de salida\n");}	
 		
-	i = 0;
 	fprintf(fsalida, "Fuentes\t pH\t Conductividad\t Turbidez\t Coliformes\t\n");
-	
+	fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
 	while (fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
 		fprintf(fsalida,"%s %.1f\t %d\t\t %d\t\t %d\n", parametros[i].fuente, parametros[i].nph, parametros[i].nconductividad, parametros[i].ncoliformes, parametros[i].nturbidez);
-		media += parametros[i].nph;
-		if (parametros[i].nph > nphMax) {
-			nphMax = parametros[i].nph;
-			a=i;
 		}
-		fuentes++;
-		i++;
-	}
 	
-	printf("Nota media es: %f\n", media / fuentes);
-	printf("El ph maximo es: %f que pertenece a la fuente %s\n", nphMax,parametros[a].fuente);
+	
+	printf("Se ha realizado correctamente el cambio.\n");
 
 	fclose(fentrada);
 	fclose(fsalida);
    		
-   		break; 
+   		break; }
 		
-	   }
+	   
    	
    	case 3:{
 	printf("Introduce el nombre del fichero que contiene los datos\n");
@@ -113,9 +104,48 @@ int main(){
 		printf("%s %.1f\t %d\t\t %d\t\t %d\n", parametros[i].fuente, parametros[i].nph, parametros[i].nconductividad, parametros[i].ncoliformes, parametros[i].nturbidez);
 	}
 	   }break;
-   		
-   		
-   }
+   	
+	case 4:{
+		
+		printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	if (fentrada == NULL) {
+		printf("Error, no puede abrir el fichero.\n");
+		return 0;}
+		
+		i = 0;
+		fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+		while (fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
+		
+		sumapH += parametros[i].nph;
+		if (parametros[i].nph > nphMax) {
+			nphMax = parametros[i].nph;
+			a=i;
+		}
+		if (parametros[i].nph < nphMin) {
+			nphMin = parametros[i].nph;
+			b=i;
+		}
+		fuentes++;
+		i++;
+	}
+	
+	printf("Nota media es: %f\n", sumapH / fuentes);
+	printf("El ph maximo es: %f que pertenece a la fuente %s\n", nphMax,parametros[a].fuente);
+	printf("El ph minimo es: %f que pertenece a la fuente %s\n", nphMin,parametros[b].fuente);
+		
+		
+		break;
+	}   	
+   	default:{ printf("Saliendo del programa...");
+		break;
+	   }	
+   } 
+	
+} while(elec==1|| elec==2||elec==3||elec==4);
+    
    
 
 	return 0;
