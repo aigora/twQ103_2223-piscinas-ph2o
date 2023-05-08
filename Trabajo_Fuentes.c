@@ -10,7 +10,7 @@ struct Tfuentes{
 int main(){
 	struct Tfuentes parametros[TAM_MAX];
 	char nombreFichero[200];
-	int elec,nfuentes,i,a,b, fuentes=0,fuentephmax=0;
+	int elec,elecdatos,nfuentes,i,a,b, fuentes=0,fuentephmax=0;
 	float sumapH, nphMax=0,nphMin=14;
 	FILE *fentrada, *fsalida;
 do{printf("\nBuenos dias,introduzca con numero lo que deseas hacer en este programa\n1.Guardar nuevos datos\n2.Guardar datos de un fichero en otro\n3.Comprobar un fichero\n4.Realizar estadisticas\nPulse cualquier otra tecla o numero para salir\n");
@@ -106,39 +106,140 @@ do{printf("\nBuenos dias,introduzca con numero lo que deseas hacer en este progr
 	   }break;
    	
 	case 4:{
-		
-		printf("Introduce el nombre del fichero que contiene los datos\n");
+	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	
 	fentrada = fopen(nombreFichero,"r"); // leyendo	
-	if (fentrada == NULL) {
-		printf("Error, no puede abrir el fichero.\n");
-		return 0;}
-		
-		i = 0;
-		fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
-		while (fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
-		
-		sumapH += parametros[i].nph;
-		if (parametros[i].nph > nphMax) {
-			nphMax = parametros[i].nph;
-			a=i;
-		}
-		if (parametros[i].nph < nphMin) {
-			nphMin = parametros[i].nph;
-			b=i;
-		}
-		fuentes++;
-		i++;
-	}
 	
-	printf("Nota media es: %f\n", sumapH / fuentes);
-	printf("El ph maximo es: %f que pertenece a la fuente %s\n", nphMax,parametros[a].fuente);
-	printf("El ph minimo es: %f que pertenece a la fuente %s\n", nphMin,parametros[b].fuente);
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+	 	
+	printf("A continuacion escribe lo que quieras hacer:\n1.Media de alguno de los parametros\n2.Desviacion tipica de alguno de los parametros\n3.Valor minimo o maximo de alguno de los parametros\n");
+	scanf("%d",&elecdatos);
+	switch(elecdatos){
+		case 1:{ 
+			printf("De que parametro quieres calcular la media:\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
+	        scanf("%d",&elecdatos);
+	        
+		        switch(elecdatos){
+				    case 1:{
+					printf("La media del pH es:\n");
+						break;
+					}
+					case 2:{
+					printf("La media de la conductividad es:\n");
+						break;
+					}
+					case 3:{
+					printf("La media de la turbidez es:\n");
+						break;
+					}
+					case 4:{
+					printf("La media de los coliformes es:\n");
+						break;
+					}
+			}
+			
+			
+			break;
+		}
+		case 2:{
+			printf("De que parametro quieres calcular la desviacion tipica:\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
+	        scanf("%d",&elecdatos);
+	        
+		        switch(elecdatos){
+				    case 1:{
+					printf("La desviacion tipica del pH es:\n");
+						break;
+					}
+					case 2:{
+					printf("La desviacion tipica de la conductividad es:\n");
+						break;
+					}
+					case 3:{
+					printf("La desviacion tipica de la turbidez es:\n");
+						break;
+					}
+					case 4:{
+					printf("La desviacion tipica de los coliformes es:\n");
+						break;
+					}
+			}
+			
+			
+			break;
+		}
+		case 3:{
+			printf("1.Valor maximo\n2.Valor minimo\n");
+	        scanf("%d",&elecdatos);
+	         switch(elecdatos){
+	         	case 1:{	
+				 printf("De que parametro quieres calcular su valor maximo:\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
+	             scanf("%d",&elecdatos);
+	        
+		         switch(elecdatos){
+				    case 1:{
+					printf("El valor maximo del pH es:\n");
+						break;
+					}
+					case 2:{
+					printf("El valor maximo de la conductividad es:\n");
+						break;
+					}
+					case 3:{
+					printf("El valor maximo de la turbidez es:\n");
+						break;
+					}
+					case 4:{
+					printf("El valor maximo de los coliformes es:\n");
+						break;
+					}
+			}
+	         		
+	         		
+					break;
+				 }
+	         	case 2:{
+	         	 printf("De que parametro quieres calcular su valor minimo:\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
+	             scanf("%d",&elecdatos);
+	        
+		         switch(elecdatos){
+				    case 1:{
+					printf("El valor minimo del pH es:\n");
+						break;
+					}
+					case 2:{
+					printf("El valor minimo de la conductividad es:\n");
+						break;
+					}
+					case 3:{
+					printf("El valor minimo de la turbidez es:\n");
+						break;
+					}
+					case 4:{
+					printf("El valor minimo de los coliformes es:\n");
+						break;
+					}
+			}
+	         		
+					break;
+				 }
+	         	
+	         	
+			 }
+			
+			
+			break;
+		}
+		
+		
+    	}
+
 		
 		
 		break;
-	}   	
+	}   
+		
    	default:{ printf("Saliendo del programa...");
 		break;
 	   }	
@@ -150,3 +251,23 @@ do{printf("\nBuenos dias,introduzca con numero lo que deseas hacer en este progr
 
 	return 0;
 }
+
+
+//       fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+//		while (fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
+		
+//		sumapH += parametros[i].nph;
+	//	if (parametros[i].nph > nphMax) {
+	//		nphMax = parametros[i].nph;
+	//		a=i;
+	//	}
+	//	if (parametros[i].nph < nphMin) {
+	//		nphMin = parametros[i].nph;
+	//		b=i;
+	//	}
+	//	fuentes++;
+	//	i++;
+	//		}
+	//	printf("Nota media es: %f\n", sumapH / fuentes);
+//	printf("El ph maximo es: %f que pertenece a la fuente %s\n", nphMax,parametros[a].fuente);
+//	printf("El ph minimo es: %f que pertenece a la fuente %s\n", nphMin,parametros[b].fuente);  
