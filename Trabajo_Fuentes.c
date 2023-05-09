@@ -9,16 +9,42 @@ struct Tfuentes{
 	int ncoliformes;
 	int nturbidez;
 };
+float calcularmedia(FILE *fentrada) {
+    int fuentes,i;
+    float media=0,suma=0;
+    struct Tfuentes parametros[TAM_MAX];
+   
+    while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
+  suma+=parametros[i].nconductividad;
+   i++;
+  	}
+  media=suma/i;
 
-float fmedia (struct Tfuentes parametros[], int nfuentes);
+return media;
 
+    }
+    float calcularmedias(FILE *fentrada) {
+    int fuentes,i;
+    float media=0,suma=0;
+    struct Tfuentes parametros[TAM_MAX];
+   
+    while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
+  suma+=parametros[i].nph;
+   i++;
+  	}
+  media=suma/i;
+
+return media;
+
+    }
 int main(){
 	setlocale(LC_CTYPE, "spanish"); //permite utilizar tildes
 	
 	struct Tfuentes parametros[TAM_MAX];
 	char nombreFichero[200];
 	int elec,elecdatos,nfuentes,i,a,b, fuentes=0,fuentephmax=0;
-	float sumapH, nphMax=0,nphMin=14;
+	float media,sumapH, nphMax=0,nphMin=14;
+	
 	FILE *fentrada, *fsalida;
 	
 	
@@ -118,6 +144,9 @@ int main(){
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
 	    	return 0;}
+	    	fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+	    	
+
 	 	
 	printf("A continuación, escribe lo que quieras hacer con el programa:\n1.Media de alguno de los parámetros\n2.Desviación típica de alguno de los parámetros\n3.Valor mínimo o máximo de alguno de los parámetros\n");
 	scanf("%d",&elecdatos);
@@ -128,17 +157,13 @@ int main(){
 	        
 		        switch(elecdatos){
 				    case 1:{
-					printf("La media del pH es:\n");
-					
-					struct Tfuentes parametros[TAM_MAX];
-					float sol;
-					sol=fmedia(parametros, nfuentes);
-					printf("Media ph: %.2f\n", sol);
-					
+				    	media = calcularmedias(fentrada);
+					printf("La media del pH es:%.2f\n",media);
 						break;
 					}
 					case 2:{
-					printf("La media de la conductividad es:\n");
+						media = calcularmedia(fentrada);
+					printf("La media de la conductividad es:%.2f\n",media);
 						break;
 					}
 					case 3:{
@@ -242,27 +267,9 @@ int main(){
    
 } while(elec==1|| elec==2||elec==3||elec==4);
   
-	return 0;
+
 }
-
-float fmedia (struct Tfuentes parametros[], int nfuentes){
-	float suma=0,sol;
-	int i;
-	
-	for(i=0; i<nfuentes; i++){
-		suma+=parametros[i].nph; //ERROR
-	}
-	
-	sol=suma/nfuentes;
-	
-	return sol;
-}
-
-
-//       fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
-//		while (fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
-		
-//		sumapH += parametros[i].nph;
+	    
 	//	if (parametros[i].nph > nphMax) {
 	//		nphMax = parametros[i].nph;
 	//		a=i;
