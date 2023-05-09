@@ -11,34 +11,6 @@ struct Tfuentes{
 };
 float calcularmedia(FILE *fentrada) {
     int fuentes,i;
-<<<<<<< HEAD
-    float media=0,suma=0;
-    struct Tfuentes parametros[TAM_MAX];
-   
-    while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
-  suma+=parametros[i].nconductividad;
-   i++;
-  	}
-  media=suma/i;
-
-return media;
-
-    }
-    float calcularmedias(FILE *fentrada) {
-    int fuentes,i;
-    float media=0,suma=0;
-    struct Tfuentes parametros[TAM_MAX];
-   
-    while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
-  suma+=parametros[i].nph;
-   i++;
-  	}
-  media=suma/i;
-
-return media;
-
-    }
-=======
     float  suma, media;
     struct Tfuentes parametros[TAM_MAX];
     
@@ -54,7 +26,6 @@ return media;
 
     return media; // Retorna la media
 }
->>>>>>> 100542dab8f86a367ee86bd440feff6937ecf68d
 int main(){
 	setlocale(LC_CTYPE, "spanish"); //permite utilizar tildes
 	
@@ -85,23 +56,64 @@ int main(){
 	fprintf(fsalida, "Fuentes\t pH\t Conductividad\t Turbidez\t Coliformes\t\n");
 	for(i=1;i<=nfuentes;i++){
 		
-	printf("Escriba,respectivamente,los valores de la fuente %d,pH,conductividad,coliformes y turbidez:\n",i);
+	printf("Escriba,respectivamente,los valores de la fuente %d, pH (0-14), conductividad (50-1500)mmhos/cm, coliformes y turbidez:\n",i);
 	scanf("%f %d %d %d", &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez);
 	fprintf(fsalida,"Fuente_%d\t", i);
 	
 	if(parametros[i].nph<0||parametros[i].nph>14){
 	do{
-	printf("El valor intrducido es erróneo.Introduzca otra vez el pH de la fuente %d:\n",i);
+	printf("El valor introducido es erróneo.Introduzca otra vez el pH de la fuente %d:\n",i);
 	scanf("%f",&parametros[i].nph);
 	} while(parametros[i].nph<0||parametros[i].nph>14);
 	}
-	
-	if(parametros[i].nconductividad<50||parametros[i].nconductividad>1500){
-	do{
-	printf("El valor intrducido es erróneo.Introduzca otra vez el número de conductividad de la fuente %d:\n",i);
-	scanf("%d",&parametros[i].nconductividad);
-	} while(parametros[i].nconductividad<50||parametros[i].nconductividad>1500);
+	if(parametros[i].nph<7){
+		printf("Según el ph de la fuente %d, es acido\n", i);
+	} else if(parametros[i].nph == 7){
+		printf("Según el ph de la fuente %d, es neutro\n", i);
+	} else {
+		printf("Según el ph de la fuente %d, es \n", i);
 	}
+	
+	if(parametros[i].nconductividad<0 || parametros[i].nconductividad>1500){
+	do{
+	printf("El valor introducido es erróneo.Introduzca otra vez el número de conductividad de la fuente %d:\n",i);
+	scanf("%d",&parametros[i].nconductividad);
+	} while(parametros[i].nconductividad<0 || parametros[i].nconductividad>1500);
+	}
+	if(parametros[i].nconductividad<=500 && parametros[i].nconductividad>=50){
+		printf("Según la conductividad de la fuente %d, su agua es de buena calidad\n", i);
+	} else {
+		printf("Según la conductividad de la fuente %d, su agua no es de buena calidad\n", i);
+	}
+	
+	
+	if(parametros[i].ncoliformes<0 || parametros[i].ncoliformes>1500){
+	do{
+	printf("El valor introducido es erróneo.Introduzca otra vez el número de coliformes de la fuente %d:\n",i);
+	scanf("%d",&parametros[i].ncoliformes);
+	} while(parametros[i].ncoliformes<0 || parametros[i].ncoliformes>1500);
+	}
+	if(parametros[i].ncoliformes>2){
+		printf("Según el numero de colifromes de la fuente %d, su agua no es apta para el consumo humano\n", i);
+	} else {
+		printf("Según el numero de colifromes de la fuente %d, su agua es apta para el consumo humano\n", i);
+	}
+	
+	if(parametros[i].nturbidez<0 || parametros[i].nturbidez>1000){
+	do{
+	printf("El valor introducido es erróneo.Introduzca otra vez la turbidez de la fuente %d:\n",i);
+	scanf("%f",&parametros[i].nturbidez);
+	} while(parametros[i].nturbidez<0||parametros[i].nturbidez>1000);
+	}
+	if(parametros[i].nturbidez<1){
+		printf("Según la turbidez de la fuente %d, su agua es apta para el consumo humano\n", i);
+	} else if(parametros[i].nturbidez>1 && parametros[i].nturbidez<5){
+		printf("Según la turbidez de la fuente %d, su agua no es recomendable para el consumo humano\n", i);
+	} else{
+		printf("Según la turbidez de la fuente %d, su agua, bajo ningún concepto, debe ser consumida por el ser humano\n", i);
+	}
+	
+	
 	fprintf(fsalida,"%.1f\t %d\t %d\t\t\t %d\n", parametros[i].nph, parametros[i].nconductividad, parametros[i].ncoliformes, parametros[i].nturbidez);
 	}
 	fclose(fsalida);
@@ -175,22 +187,16 @@ int main(){
 	        
 		        switch(elecdatos){
 				    case 1:{
-<<<<<<< HEAD
-				    	media = calcularmedias(fentrada);
-					printf("La media del pH es:%.2f\n",media);
-=======
 					printf("La media del pH es:\n");
 					
 				    media = calcularmedia(fentrada);
 					printf("Media ph: %f\n",media);
 					fclose(fentrada);
 					
->>>>>>> 100542dab8f86a367ee86bd440feff6937ecf68d
 						break;
 					}
 					case 2:{
-						media = calcularmedia(fentrada);
-					printf("La media de la conductividad es:%.2f\n",media);
+					printf("La media de la conductividad es:\n");
 						break;
 					}
 					case 3:{
@@ -296,18 +302,3 @@ int main(){
   
 
 }
-	    
-	//	if (parametros[i].nph > nphMax) {
-	//		nphMax = parametros[i].nph;
-	//		a=i;
-	//	}
-	//	if (parametros[i].nph < nphMin) {
-	//		nphMin = parametros[i].nph;
-	//		b=i;
-	//	}
-	//	fuentes++;
-	//	i++;
-	//		}
-	//	printf("Nota media es: %f\n", sumapH / fuentes);
-//	printf("El ph maximo es: %f que pertenece a la fuente %s\n", nphMax,parametros[a].fuente);
-//	printf("El ph minimo es: %f que pertenece a la fuente %s\n", nphMin,parametros[b].fuente);  
