@@ -11,7 +11,6 @@ struct Tfuentes{
 };
 float calcularmedia(FILE *fentrada) {
     int fuentes,i;
-<<<<<<< HEAD
     float media=0,suma=0;
     struct Tfuentes parametros[TAM_MAX];
    
@@ -24,37 +23,7 @@ float calcularmedia(FILE *fentrada) {
 return media;
 
     }
-    float calcularmedias(FILE *fentrada) {
-    int fuentes,i;
-    float media=0,suma=0;
-    struct Tfuentes parametros[TAM_MAX];
-   
-    while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
-  suma+=parametros[i].nph;
-   i++;
-  	}
-  media=suma/i;
 
-return media;
-
-    }
-=======
-    float  suma, media;
-    struct Tfuentes parametros[TAM_MAX];
-    
-    
-   
-   while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].ncoliformes,&parametros[i].nturbidez) != EOF){
-    fuentes++;
-     printf("%f",parametros[i].nph);
-	    suma += parametros[i].nph; // Acumula la suma de los parámetros
-    }
-
-      media = suma/fuentes; // Calcula la media
-
-    return media; // Retorna la media
-}
->>>>>>> 100542dab8f86a367ee86bd440feff6937ecf68d
 int main(){
 	setlocale(LC_CTYPE, "spanish"); //permite utilizar tildes
 	
@@ -175,17 +144,17 @@ int main(){
 	        
 		        switch(elecdatos){
 				    case 1:{
-<<<<<<< HEAD
-				    	media = calcularmedias(fentrada);
-					printf("La media del pH es:%.2f\n",media);
-=======
+
+				    	
+					printf("La media del pH es:%.2f\n");
+
 					printf("La media del pH es:\n");
 					
 				    media = calcularmedia(fentrada);
 					printf("Media ph: %f\n",media);
 					fclose(fentrada);
 					
->>>>>>> 100542dab8f86a367ee86bd440feff6937ecf68d
+
 						break;
 					}
 					case 2:{
