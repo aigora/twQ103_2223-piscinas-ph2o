@@ -11,6 +11,361 @@ struct Tfuentes{
 	int nturbidez;
 };
 
+float valorminph(FILE *fentrada) {
+	int i,a;
+    float phmin=14;
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+        	if (parametros[i].nph <phmin) {
+			phmin = parametros[i].nph;
+			a=i;
+        i++;
+		}
+  
+ 	  		}
+ 	  	printf("El valor mínimo del pH es %.2f, de la %s\n",parametros[a].nph, parametros[a].fuente);
+	  	}
+	
+	float valorminconduc(FILE *fentrada) {
+	int i,a;
+    float minconduc=1500;
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+        	if (parametros[i].nconductividad < minconduc) {
+			minconduc = parametros[i].nconductividad;
+			a=i;
+        i++;
+		}
+  
+ 	  		}
+ 	  	printf("El valor mínimo de la conductividad es %d, de la %s\n",parametros[a].nconductividad, parametros[a].fuente);
+	  	}
+	  	
+	float valorminturbidez(FILE *fentrada) {
+	int i,a;
+    float minturbidez=1000;
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+        	if (parametros[i].nturbidez < minturbidez) {
+			minturbidez = parametros[i].nturbidez;
+			a=i;
+        i++;
+		}
+  
+ 	  		}
+ 	  	printf("El valor mínimo de la turbidez es %d, de la %s\n",parametros[a].nturbidez, parametros[a].fuente);
+	  	}
+	  	
+	float valormincoliformes(FILE *fentrada) {
+	int i,a;
+    float mincoliformes=0;
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+        	if (parametros[i].ncoliformes < mincoliformes) {
+			mincoliformes = parametros[i].ncoliformes;
+			a=i;
+        i++;
+		}
+  
+ 	  		}
+ 	  	printf("El valor mínimo de los coliformes es %d, de la %s\n",parametros[a].ncoliformes, parametros[a].fuente);
+	  	}
+	  	
+	  	
+float valormaxph(FILE *fentrada) {
+	int i,a;
+    float nphMax=0;
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+        	if (parametros[i].nph > nphMax) {
+			nphMax = parametros[i].nph;
+			a=i;
+        i++;
+		}
+  
+ 	  		}
+ 	  	printf("El valor máximo del pH es %.2f, de la %s\n",parametros[a].nph, parametros[a].fuente);
+	  	}
+	  	
+float valormaxconduc(FILE *fentrada) {
+	int i,a;
+    float conducmax=0;
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+        	if (parametros[i].nconductividad > conducmax) {
+			conducmax = parametros[i].nconductividad;
+			a=i;
+        i++;
+		}
+  
+ 	  		}
+ 	  	printf("El valor máximo de la conductividad es %d, de la %s\n",parametros[a].nconductividad, parametros[a].fuente);
+	  	}
+float valormaxturbidez(FILE *fentrada) {
+	int i,a;
+    float turbidezmax=0;
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+        	if (parametros[i].nturbidez > turbidezmax) {
+			turbidezmax = parametros[i].nturbidez;
+			a=i;
+        i++;
+		}
+  
+ 	  		}
+ 	  	printf("El valor máximo de la turbidez es %d, de la %s\n",parametros[a].nturbidez, parametros[a].fuente);
+	  	}
+float valormaxcoliformes(FILE *fentrada) {
+	int i,a;
+    float coliformesmax=0;
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+        	if (parametros[i].ncoliformes > coliformesmax) {
+			coliformesmax = parametros[i].ncoliformes;
+			a=i;
+        i++;
+		}
+  
+ 	  		}
+ 	  	printf("El valor máximo de los coliformes es %d, de la %s\n",parametros[a].ncoliformes, parametros[a].fuente);
+	  	}
+	  	
+float contadorpH(FILE *fentrada) {
+	int i,contador=0;
+    float valor;
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       	printf("Introduzca el valor que quiere ver cuantas veces aparece en el fichero\n");
+			scanf("%f",&valor);
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+		if(parametros[i].nph==valor){
+		contador++;
+		}
+  
+ 	  	i++;
+	  	}
+printf("El valor introducido se repite %d veces\n",contador);
+
+return ;
+fclose(fentrada);
+ }
+ float contadorconduc(FILE *fentrada) {
+	int valor,i,contador=0;
+   
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       	printf("Introduzca el valor que quiere ver cuantas veces aparece en el fichero\n");
+			scanf("%d",&valor);
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+		if(parametros[i].nconductividad==valor){
+		contador++;
+		}
+  
+ 	  	i++;
+	  	}
+printf("El valor introducido se repite %d veces\n",contador);
+
+return ;
+fclose(fentrada);
+ }
+ float contadorturbidez(FILE *fentrada) {
+	int valor,i,contador=0;
+    
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       	printf("Introduzca el valor que quiere ver cuantas veces aparece en el fichero\n");
+			scanf("%d",&valor);
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+		if(parametros[i].nturbidez==valor){
+		contador++;
+		}
+  
+ 	  	i++;
+	  	}
+printf("El valor introducido se repite %d veces\n",contador);
+
+return ;
+fclose(fentrada);
+ }
+ float contadorcoliformes(FILE *fentrada) {
+	int valor,i,contador=0;
+    
+    struct Tfuentes parametros[TAM_MAX];
+    char nombreFichero[200];
+
+   
+   	printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+      fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+   
+       	printf("Introduzca el valor que quiere ver cuantas veces aparece en el fichero\n");
+			scanf("%d",&valor);
+	
+		while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+		if(parametros[i].ncoliformes==valor){
+		contador++;
+		}
+  
+ 	  	i++;
+	  	}
+printf("El valor introducido se repite %d veces\n",contador);
+
+return ;
+fclose(fentrada);
+ }
 float mediaph(FILE *fentrada) {
 	int fuentes,i;
     float media=0,suma=0;
@@ -145,18 +500,137 @@ float desvtipph(FILE *fentrada) {
   	}
   desvtip=sqrt(sumat/i);
 
-printf("%f",desvtip);
+printf("La desviacion tipica es:%f\n",desvtip);
 
 return desvtip;
  }
+ 
+ float desvtipconduc(FILE *fentrada) {
+    int fuentes,i,n;
+    char nombreFichero[200];
+    float desvtip=0,media,sumat=0,suma=0;
+    struct Tfuentes parametros[TAM_MAX];
+    
+    printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    if (fentrada == NULL) {
+	    printf("Error, no puede abrir el fichero.\n");
+	    return 0;}
+	 fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);   	
+	   
+	while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+		suma+=parametros[i].nconductividad;
+  
+ 	  	i++;
+	  	}
+  media=suma/i;
+   
+    fclose(fentrada);
+    
+	i=0;
+    fentrada = fopen(nombreFichero,"r");
+    
+    fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+    while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+    sumat+=pow(parametros[i].nconductividad-media,2);
+    i++;
+  	}
+  desvtip=sqrt(sumat/i);
+
+printf("La desviacion tipica es:%f\n",desvtip);
+
+return desvtip;
+ }
+ float desvtipturbidez(FILE *fentrada) {
+    int fuentes,i,n;
+    char nombreFichero[200];
+    float desvtip=0,media,sumat=0,suma=0;
+    struct Tfuentes parametros[TAM_MAX];
+    
+    printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    if (fentrada == NULL) {
+	    printf("Error, no puede abrir el fichero.\n");
+	    return 0;}
+	 fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);   	
+	   
+	while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+		suma+=parametros[i].nturbidez;
+  
+ 	  	i++;
+	  	}
+  media=suma/i;
+   
+    fclose(fentrada);
+    
+	i=0;
+    fentrada = fopen(nombreFichero,"r");
+    
+    fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+    while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+    sumat+=pow(parametros[i].nturbidez-media,2);
+    i++;
+  	}
+  desvtip=sqrt(sumat/i);
+
+printf("La desviacion tipica es:%f\n",desvtip);
+
+return desvtip;
+ }
+ float desvtipcoliformes(FILE *fentrada) {
+    int fuentes,i,n;
+    char nombreFichero[200];
+    float desvtip=0,media,sumat=0,suma=0;
+    struct Tfuentes parametros[TAM_MAX];
+    
+    printf("Introduce el nombre del fichero que contiene los datos\n");
+	scanf("%s",nombreFichero);
+	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    if (fentrada == NULL) {
+	    printf("Error, no puede abrir el fichero.\n");
+	    return 0;}
+	 fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);   	
+	   
+	while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+		suma+=parametros[i].ncoliformes;
+  
+ 	  	i++;
+	  	}
+  media=suma/i;
+   
+    fclose(fentrada);
+    
+	i=0;
+    fentrada = fopen(nombreFichero,"r");
+    
+    fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+    while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+    sumat+=pow(parametros[i].ncoliformes-media,2);
+    i++;
+  	}
+  desvtip=sqrt(sumat/i);
+
+printf("La desviacion tipica es:%f\n",desvtip);
+
+return desvtip;
+ }
+ 
+ 
+ 
+ 
  
 int main(){
 	setlocale(LC_CTYPE, "spanish"); //permite utilizar tildes
 	
 	struct Tfuentes parametros[TAM_MAX];
 	char nombreFichero[200];
-	int elec,elecdatos,nfuentes,i,a,b, fuentes=0,fuentephmax=0;
-	float desvtip,media,sumapH, nphMax=0,nphMin=14;
+	int contador,elec,elecdatos,nfuentes,i,a,b, fuentes=0,fuentephmax=0;
+	float valor,valormax,valormin,desvtip,media,sumapH, nphMax=0,nphMin=14;
 	
 	FILE *fentrada, *fsalida;
 	
@@ -244,13 +718,13 @@ int main(){
 		fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
 		printf( "\nFuentes\t pH\t Conductividad\t Turbidez\t Coliformes\t\n\n");
 	while (fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
-		printf("%s %.1f\t %d\t\t %d\t\t %d\n", parametros[i].fuente, parametros[i].nph, parametros[i].nconductividad, parametros[i].nturbidez, parametros[i].ncoliformes);
+		printf("%s %.2f\t %d\t\t %d\t\t %d\n", parametros[i].fuente, parametros[i].nph, parametros[i].nconductividad, parametros[i].nturbidez, parametros[i].ncoliformes);
 	}
 	   }
 	break;
    	
 	case 4:{
-	printf("A continuación, escribe lo que quieras hacer con el programa:\n1.Media de alguno de los parámetros\n2.Desviación típica de alguno de los parámetros\n3.Valor mínimo o máximo de alguno de los parámetros\n");
+	printf("A continuación, escribe lo que quieras hacer con el programa:\n1.Media de alguno de los parámetros\n2.Desviación típica de alguno de los parámetros\n3.Valor máximo o mínimo de alguno de los parámetros\n4.Buscar cuantas veces se repite un parametro\n");
 	scanf("%d",&elecdatos);
 	switch(elecdatos){
 		case 1:{ 
@@ -296,15 +770,15 @@ int main(){
 						break;
 					}
 					case 2:{
-					printf("La desviación típica de la conductividad es:\n");
+					desvtip=desvtipconduc(fentrada);
 						break;
 					}
 					case 3:{
-					printf("La desviación típica de la turbidez es:\n");
+					desvtip=desvtipturbidez(fentrada);
 						break;
 					}
 					case 4:{
-					printf("La desviación típica de los coliformes es:\n");
+					desvtip=desvtipcoliformes(fentrada);
 						break;
 					}
 			}
@@ -320,19 +794,19 @@ int main(){
 	        
 		         switch(elecdatos){
 				    case 1:{
-					printf("El valor máximo del pH es:\n");
+					valormax=valormaxph(fentrada);
 						break;
 					}
 					case 2:{
-					printf("El valor máximo de la conductividad es:\n");
+					valormax=valormaxconduc(fentrada);
 						break;
 					}
 					case 3:{
-					printf("El valor máximo de la turbidez es:\n");
+					valormax=valormaxturbidez(fentrada);
 						break;
 					}
 					case 4:{
-					printf("El valor máximo de los coliformes es:\n");
+					valormax=valormaxcoliformes(fentrada);
 						break;
 					}
 			}	
@@ -344,19 +818,19 @@ int main(){
 	        
 		         switch(elecdatos){
 				    case 1:{
-					printf("El valor mínimo del pH es:\n");
+					valormin=valorminph(fentrada);
 						break;
 					}
 					case 2:{
-					printf("El valor mínimo de la conductividad es:\n");
+					valormin=valorminconduc(fentrada);
 						break;
 					}
 					case 3:{
-					printf("El valor mínimo de la turbidez es:\n");
+					valormin=valorminturbidez(fentrada);
 						break;
 					}
 					case 4:{
-					printf("El valor mínimo de los coliformes es:\n");
+					valormin=valormincoliformes(fentrada);
 						break;
 					}
 			}
@@ -366,9 +840,41 @@ int main(){
 			 }
 			break;
 		}
+		case 4:{
+		printf("Con que parametro desea calcular:\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
+		scanf("%d",&elec);
+		switch(elec){
+			case 1:{
+		    	contador=contadorpH(fentrada);
+				
+				break;
+			}
+			case 2:{
+				contador=contadorconduc(fentrada);
+				break;
+			}
+			case 3:{
+				contador=contadorturbidez(fentrada);
+				break;
+			}
+			case 4:{
+				contador=contadorcoliformes(fentrada);
+				break;
+			}
+			
+		}
+		
+		break;
+	}
+		
+		
+		
     	}
 		break;
-	}   	
+	}
+	
+	
+	  	
    	default:{ printf("Saliendo del programa...");
 		break;
 	   }	
@@ -378,18 +884,3 @@ int main(){
   
 
 }
-	    
-	//	if (parametros[i].nph > nphMax) {
-	//		nphMax = parametros[i].nph;
-	//		a=i;
-	//	}
-	//	if (parametros[i].nph < nphMin) {
-	//		nphMin = parametros[i].nph;
-	//		b=i;
-	//	}
-	//	fuentes++;
-	//	i++;
-	//		}
-	//	printf("Nota media es: %f\n", sumapH / fuentes);
-//	printf("El ph maximo es: %f que pertenece a la fuente %s\n", nphMax,parametros[a].fuente);
-//	printf("El ph minimo es: %f que pertenece a la fuente %s\n", nphMin,parametros[b].fuente);  
