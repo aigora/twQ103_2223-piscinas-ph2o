@@ -655,7 +655,7 @@ int main(){
 	for(i=1;i<=nfuentes;i++){
 		
 	printf("Escriba,respectivamente,los valores de la fuente %d,pH,conductividad,turbidez y coliformes:\n",i);
-	scanf("%f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes);
+	scanf("%f %d %d %d",&parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes);
 	fprintf(fsalida,"Fuente_%d\t", i);
 	
 	if(parametros[i].nph<0||parametros[i].nph>14){
