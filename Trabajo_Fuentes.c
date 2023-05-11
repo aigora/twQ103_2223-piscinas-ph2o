@@ -620,10 +620,6 @@ printf("La desviacion tipica es:%f\n",desvtip);
 return desvtip;
  }
  
- 
- 
- 
- 
 int main(){
 	setlocale(LC_CTYPE, "spanish"); //permite utilizar tildes
 	
@@ -652,6 +648,7 @@ int main(){
 	if (fsalida == NULL) {
 	printf("Error en la apertura del fichero de salida\n");}
 	fprintf(fsalida, "Fuentes\t pH\t Conductividad\t Turbidez\t Coliformes\t\n");
+	printf("\n*NOTA: Los valores permitidos por la OMS son los siguientes:\n ph: entre 7 y 8.5\n Conductividad: entre 50 y 500\n Coliformes: entre 0 y 2\n Turbidez: entre 0 y 5 (lo ideal es entre 0 y 1)\n\n");
 	for(i=1;i<=nfuentes;i++){
 		
 	printf("Escriba,respectivamente,los valores de la fuente %d,pH,conductividad,turbidez y coliformes:\n",i);
@@ -671,6 +668,22 @@ int main(){
 	scanf("%d",&parametros[i].nconductividad);
 	} while(parametros[i].nconductividad<50||parametros[i].nconductividad>1500);
 	}
+	
+	if(parametros[i].ncoliformes<0 || parametros[i].ncoliformes>1500){
+	do{
+	printf("El valor introducido es erróneo.\nIntroduzca de nuevo el número de coliformes de la fuente %d:\n",i);
+	scanf("%d",&parametros[i].ncoliformes);
+	} while(parametros[i].ncoliformes<0 || parametros[i].ncoliformes>1500);
+	} 
+
+	if(parametros[i].nturbidez<0 || parametros[i].nturbidez>1000){
+	do{
+	printf("El valor introducido es erróneo.Introduzca otra vez la turbidez de la fuente %d:\n",i);
+	scanf("%f",&parametros[i].nturbidez);
+	} while(parametros[i].nturbidez<0||parametros[i].nturbidez>1000);
+	}
+	
+	// copia aqui tu parte juan 
 	fprintf(fsalida,"%.1f\t %d\t %d\t\t\t %d\n",parametros[i].nph,parametros[i].nconductividad,parametros[i].nturbidez,parametros[i].ncoliformes);
 	}
 	fclose(fsalida);
