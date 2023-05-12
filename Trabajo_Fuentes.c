@@ -679,6 +679,43 @@ float valorminph(FILE *fentrada) {
 	}
 	
 	// copia aqui tu parte juan
+	if(parametros[i].nph<7 || parametros[i].nph>8.5){
+		printf("Como los valores del ph no se encuentran entre 7 y 8.5, la fuente %d no está permitida por la OMS.\n", i);	
+	} else if(parametros[i].nconductividad>500 || parametros[i].nconductividad<50){
+		printf("Como los valores de la conductividad no se encuentran entre 50 y 500, la fuente %d no está permitida por la OMS\n", i);
+		if(parametros[i].ncoliformes>2){
+			printf("Los valores introducidos de coliformes tampoco son aceptados.\n");
+		} else if(parametros[i].nturbidez>5){
+			printf("Los valores introducidos de turbidez tampoco son aceptados.\n\n");
+		}
+	} else if(parametros[i].ncoliformes>2){
+		printf("Como el número de coliformes es superior a 2, la fuente %d no está permitida por la OMS.\n", i);
+		if(parametros[i].nturbidez>5){
+			printf("Los valores introducidos de turbidez tampoco son aceptados.\n\n");
+		}
+	} else if(parametros[i].nturbidez>5){
+		printf("Como la turbidez es superior a 5, la fuente %d no está permitida por la OMS.\n", i);
+	} else{
+		printf("Como todos los valores introducidos se encuentran entre los aceptados por la OMS, la fuente %d estaría permitida.\n", i);
+		if(parametros[i].nturbidez<1){
+			printf("Además, la turbidez de la fuente es ideal ya que es menor que 1\n");
+		}
+	}
+	
+	if(parametros[i].nph<7){
+		printf("El ph de la fuente %d es acido\n", i);
+	    } else if (parametros[i].nph>7) {
+	    	printf("El ph de la fuente %d es básico\n", i);
+		} else {
+			printf("El ph de la fuente %d es neutro\n", i);
+		}
+		if (parametros[i].nconductividad>500 || parametros[i].nconductividad<50){
+			printf("Los valores introducidos de la conductividad tampoco son aceptados.\n");
+		} else if(parametros[i].ncoliformes>2){
+			printf("Los valores introducidos de coliformes tampoco son aceptados.\n");
+		} else if(parametros[i].nturbidez>5){
+			printf("Los valores introducidos de turbidez tampoco son aceptados.\n\n");
+		}
 	 
 	fprintf(fsalida,"%.1f\t %d\t %d\t\t\t %d\n",parametros[i].nph,parametros[i].nconductividad,parametros[i].nturbidez,parametros[i].ncoliformes);
 	}
