@@ -616,6 +616,124 @@ float valorminph(FILE *fentrada) {
 
 	return desvtip;
  	}
+
+float mejorfuente(FILE *fentrada) {
+    int i=1, a;
+    float valortotal = 0, valormax = 0, valorph = 0, valorconduc = 0, valorcol = 0, valorturb = 0;
+    struct Tfuentes parametros[TAM_MAX];
+       char nombreFichero[200];
+    
+       	printf("Introduce el nombre del fichero que contiene los datos\n");
+		scanf("%s",nombreFichero);
+		fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+   
+	fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+	while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+	//if ph
+	if(parametros[i].nph>7 && parametros[i].nph<8.5){
+		valorph = 20;
+	} else if(parametros[i].nph>8.5){
+		valorph = 10;
+	} else{
+		valorph = 5;
+	}
+	//if conductividad
+	if(parametros[i].nconductividad>50 && parametros[i].nconductividad<500){
+		valorconduc = 20;
+	} else{
+		valorconduc = 5; 
+	}
+	//if coliformes
+	if(parametros[i].ncoliformes>0 && parametros[i].ncoliformes<2){
+		valorcol = 10;
+	} else if(parametros[i].ncoliformes == 0){
+		valorcol = 20;
+	} else{
+		valorcol = 5;
+	}
+	//if turbidez
+    if(parametros[i].nturbidez>=1 && parametros[i].nturbidez<5){
+    	valorturb = 10;
+	} else if(parametros[i].nturbidez>0 && parametros[i].nturbidez<1){
+		valorturb = 15;
+	} else if (parametros[i].nturbidez == 0){
+		valorturb = 20;
+	}else{
+		valorturb = 5;
+	}
+	valortotal = valorph + valorturb + valorconduc + valorcol;
+	if (valortotal > valormax) {
+		valormax = valortotal;
+		a=i;
+	}
+	i++;
+	}
+	printf("Basándonos en los valores de sus parámetros, la mejor fuente es la fuente %d con una puntuación de: %f\n", a, valormax);
+	return valortotal;
+}
+
+float peorfuente(FILE *fentrada) {
+    int i=1, a = 0;
+    float valortotal = 0, valormin = 80, valorph = 0, valorconduc = 0, valorcol = 0, valorturb = 0;
+    struct Tfuentes parametros[TAM_MAX];
+       char nombreFichero[200];
+    
+       	printf("Introduce el nombre del fichero que contiene los datos\n");
+		scanf("%s",nombreFichero);
+		fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+   
+	fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+	while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+	//if ph
+	if(parametros[i].nph>7 && parametros[i].nph<8.5){
+		valorph = 20;
+	} else if(parametros[i].nph>8.5){
+		valorph = 10;
+	} else{
+		valorph = 5;
+	}
+	//if conductividad
+	if(parametros[i].nconductividad>50 && parametros[i].nconductividad<500){
+		valorconduc = 20;
+	} else{
+		valorconduc = 5; 
+	}
+	//if coliformes
+	if(parametros[i].ncoliformes>0 && parametros[i].ncoliformes<2){
+		valorcol = 10;
+	} else if(parametros[i].ncoliformes == 0){
+		valorcol = 20;
+	} else{
+		valorcol = 5;
+	}
+	//if turbidez
+    if(parametros[i].nturbidez>=1 && parametros[i].nturbidez<5){
+    	valorturb = 10;
+	} else if(parametros[i].nturbidez>0 && parametros[i].nturbidez<1){
+		valorturb = 15;
+	} else if (parametros[i].nturbidez == 0){
+		valorturb = 20;
+	}else{
+		valorturb = 5;
+	}
+	valortotal = valorph + valorturb + valorconduc + valorcol;
+	if (valortotal < valormin) {
+		valormin = valortotal;
+		a=i;
+	}
+	i++;
+	}
+	printf("Basándonos en los valores de sus parámetros, la peor fuente es la fuente %d con una puntuación de: %f\n", a, valormin);
+	return valortotal;
+}
  
 	int main(){
 	setlocale(LC_CTYPE, "spanish"); //permite utilizar tildes
@@ -623,7 +741,7 @@ float valorminph(FILE *fentrada) {
 	struct Tfuentes parametros[TAM_MAX];
 	char nombreFichero[200];
 	int contador,elec,elecdatos,nfuentes,i,a,b, fuentes=0,fuentephmax=0;
-	float valor,valormax,valormin,desvtip,media,sumapH, nphMax=0,nphMin=14;
+	float valor,valormax,valormin,desvtip,media,sumapH, nphMax=0,nphMin=14, valortotal;
 	
 	FILE *fentrada, *fsalida;
 	
@@ -770,7 +888,7 @@ float valorminph(FILE *fentrada) {
 	break;
    	
 	case 4:{
-	printf("A continuación, escribe lo que quieras hacer con el programa:\n1.Media de alguno de los parámetros\n2.Desviación típica de alguno de los parámetros\n3.Valor máximo o mínimo de alguno de los parámetros\n4.Buscar cuantas veces se repite un parametro\n");
+	printf("A continuación, escribe lo que quieras hacer con el programa:\n1.Media de alguno de los parámetros\n2.Desviación típica de alguno de los parámetros\n3.Valor máximo o mínimo de alguno de los parámetros\n4.Buscar cuantas veces se repite un parametro\n5.Mejor o peor fuente\n");
 	scanf("%d",&elecdatos);
 	switch(elecdatos){
 		case 1:{ 
@@ -903,7 +1021,22 @@ float valorminph(FILE *fentrada) {
 			}
 		}
 		break;
-	}	
+	    }
+		case 5: {
+	    printf("¿Qué desea saber?\n1.Mejor fuente\n2.Peor fuente\n");
+		scanf("%d",&elec);
+		switch(elec){
+			case 1:{
+				valortotal=mejorfuente(fentrada);
+				break;
+			}
+			case 2:{
+				valortotal=peorfuente(fentrada);
+				break;
+			}
+		}
+			break;	
+	    }
     	}
 		break;
 	}	
