@@ -665,6 +665,7 @@ float mejorfuente(FILE *fentrada) {
 	}else{
 		valorturb = 5;
 	}
+	
 	valortotal = valorph + valorturb + valorconduc + valorcol;
 	if (valortotal > valormax) {
 		valormax = valortotal;
@@ -734,14 +735,69 @@ float peorfuente(FILE *fentrada) {
 	printf("Basándonos en los valores de sus parámetros, la peor fuente es la fuente %d con una puntuación de: %f\n", a, valormin);
 	return valortotal;
 }
- 
+
+float compararfuentes(FILE *fentrada) {
+    int b = 1, c = 1, i = 1;
+    float comparacion;
+    struct Tfuentes parametros[TAM_MAX];
+       char nombreFichero[200];
+    
+       	printf("Introduce el nombre del fichero que contiene los datos\n");
+		scanf("%s",nombreFichero);
+		fentrada = fopen(nombreFichero,"r"); // leyendo	
+	
+    	if (fentrada == NULL) {
+	    	printf("Error, no puede abrir el fichero.\n");
+	    	return 0;}
+   
+	fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
+	while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
+	i++;
+    }
+	printf("Introduzca las fuentes que desea comparar:\n");
+	scanf("%d" "%d", &b, &c);
+	//comparacion ph
+	if(parametros[b].nph > parametros[c].nph){
+		printf("El ph de la fuente %d es %.2f y es mayor que el ph de la fuente %d, que es %.2f\n", b, parametros[b].nph, c, parametros[c].nph);
+	} else if(parametros[b].nph < parametros[c].nph){
+		printf("El ph de la fuente %d es %.2f y es mayor que el ph de la fuente %d, que es %.2f\n", c, parametros[c].nph, b, parametros[b].nph);
+	} else{
+		printf("Los valores del ph de las fuentes %d y %d son iguales con un valor de: %.2f\n", b, c, parametros[b].nph);
+	}
+	//comparacion conductividad
+	if(parametros[b].nconductividad > parametros[c].nconductividad){
+		printf("La conductividad de la fuente %d es %d y es mayor que la conductividad de la fuente %d, que es %d\n", b, parametros[b].nconductividad, c, parametros[c].nconductividad);
+	} else if(parametros[b].nconductividad < parametros[c].nconductividad){
+		printf("La conductividad de la fuente %d es %d y es mayor que la conductividad de la fuente %d, que es %d\n", c, parametros[c].nconductividad, b, parametros[b].nconductividad);
+	} else{
+		printf("Los valores de conductividad de las fuentes %d y %d son iguales con un valor de: %f\n", b, c, parametros[b].nconductividad);
+	}
+	//comparacion turbidez
+	if(parametros[b].nturbidez > parametros[c].nturbidez){
+		printf("La turbidez de la fuente %d es %d y es mayor que la turbidez de la fuente %d, que es %d\n", b, parametros[b].nturbidez, c, parametros[c].nturbidez);
+	} else if(parametros[b].nturbidez < parametros[c].nturbidez){
+		printf("La turbidez de la fuente %d es %d y es mayor que la turbidez de la fuente %d, que es %d\n", c, parametros[c].nturbidez, b, parametros[b].nturbidez);
+	} else{
+		printf("Los valores de turbidez de las fuentes %d y %d son iguales con un valor de %d\n", b, c, parametros[b].nturbidez);
+	}
+	//comparacion coliformes
+	if(parametros[b].ncoliformes > parametros[c].ncoliformes){
+		printf("El número de coliformes de la fuente %d es %d y es mayor que el número de coliformes de la fuente %d, que son %d\n", b, parametros[b].ncoliformes, c, parametros[c].ncoliformes);
+	} else if(parametros[b].ncoliformes < parametros[c].ncoliformes){
+		printf("El número de coliformes de la fuente %d es %d y es mayor que el número de coliformes de la fuente %d, que son %d\n", c, parametros[c].ncoliformes, b, parametros[b].ncoliformes);
+	} else{
+		printf("Los valores de coliformes de las fuentes %d y %d son iguales: %d\n", b, c, parametros[b].ncoliformes);
+	}
+	return comparacion;
+    }
+	 
 	int main(){
 	setlocale(LC_CTYPE, "spanish"); //permite utilizar tildes
 	
 	struct Tfuentes parametros[TAM_MAX];
 	char nombreFichero[200];
 	int contador,elec,elecdatos,nfuentes,i,a,b, fuentes=0,fuentephmax=0;
-	float valor,valormax,valormin,desvtip,media,sumapH, nphMax=0,nphMin=14, valortotal;
+	float valor,valormax,valormin,desvtip,media,sumapH, nphMax=0,nphMin=14, valortotal, comparacion;
 	
 	FILE *fentrada, *fsalida;
 	
@@ -796,7 +852,6 @@ float peorfuente(FILE *fentrada) {
 	} while(parametros[i].nturbidez<0||parametros[i].nturbidez>1000);
 	}
 	
-	// copia aqui tu parte juan
 	if(parametros[i].nph<7 || parametros[i].nph>8.5){
 		printf("Como los valores del ph no se encuentran entre 7 y 8.5, la fuente %d no está permitida por la OMS.\n", i);	
 	} else if(parametros[i].nconductividad>500 || parametros[i].nconductividad<50){
@@ -888,7 +943,7 @@ float peorfuente(FILE *fentrada) {
 	break;
    	
 	case 4:{
-	printf("A continuación, escribe lo que quieras hacer con el programa:\n1.Media de alguno de los parámetros\n2.Desviación típica de alguno de los parámetros\n3.Valor máximo o mínimo de alguno de los parámetros\n4.Buscar cuantas veces se repite un parametro\n5.Mejor o peor fuente\n");
+	printf("A continuación, escribe lo que quieras hacer con el programa:\n1.Media de alguno de los parámetros\n2.Desviación típica de alguno de los parámetros\n3.Valor máximo o mínimo de alguno de los parámetros\n4.Buscar cuantas veces se repite un parametro\n5.Mejor o peor fuente\n6.Comparar parametros entre 2 fuentes\n");
 	scanf("%d",&elecdatos);
 	switch(elecdatos){
 		case 1:{ 
@@ -1037,6 +1092,10 @@ float peorfuente(FILE *fentrada) {
 		}
 			break;	
 	    }
+	    case 6: {
+	    	comparacion=compararfuentes(fentrada);
+			break;
+		}
     	}
 		break;
 	}	
