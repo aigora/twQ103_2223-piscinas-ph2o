@@ -838,9 +838,9 @@ float compararfuentes(FILE *fentrada) {
 						printf("La diferencia de los ph es %.2f\n",difph);
 						gramosne=274-(36*difph);
 						if(valorph<phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar %.2f bicarbonato de sodio",phcambio,gramosne);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar aproximdamente %.2f bicarbonato de sodio",phcambio,gramosne);
 						}else if(valorph>phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitara aplicar ácido muriático",phcambio);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar aproximadamente %.2f ácido muriático",phcambio,gramosne);
 							}
 					}else if(difph>0){
 						printf("La diferencia de ph es %f",difph);
@@ -848,7 +848,7 @@ float compararfuentes(FILE *fentrada) {
 						if(valorph<phcambio){
 							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar %.2f bicarbonato de sodio",phcambio,gramosne);
 						}else if(valorph>phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitara aplicar  ácido muriático",phcambio);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar  %.2f ácido muriático",phcambio,gramosne);
 							}
 						}
 					}else if(parametros[f].nph>=7){
@@ -858,18 +858,18 @@ float compararfuentes(FILE *fentrada) {
 						if(difph<0){
 							difph=-difph;
 							gramosne=274-(36*difph);
-							if(valorph<phcambio){
-								printf("Para modificar el valor del ph hasta %f de la fuente hasta el deseado se necesitara aplicar bicarbonato de sodio",phcambio);
-							}else if(valorph>phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente hasta el deseado se necesitara aplicar ácido muriático",phcambio);
+						if(valorph<phcambio){
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar %.2f bicarbonato de sodio",phcambio,gramosne);
+						}else if(valorph>phcambio){
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar  %.2f ácido muriático",phcambio,gramosne);
 							}
 						}else if(difph>0){
 						printf("La diferencia de ph es %f",difph);
 						gramosne=274-(36*difph);
 						if(valorph<phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitara aplicar bicarbonato de sodio",phcambio);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar %.2f bicarbonato de sodio",phcambio,gramosne);
 						}else if(valorph>phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitara aplicar ácido muriático",phcambio);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar  %.2f ácido muriático",phcambio,gramosne);
 							}
 						}
 					}
@@ -896,17 +896,17 @@ float compararfuentes(FILE *fentrada) {
 						difconduc=-difconduc;
 						printf("La diferencia de las conductividades es %.2f\n",difconduc);
 						if(valorconductividad<cambioconductividad){
-							printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambioconductividad);
+							printf("Para modificar el valor de la conductividad hasta %f se necesitara ionizar el agua de la fuentge ",cambioconductividad);
 						}else if(valorconductividad>cambioconductividad){
-							printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambioconductividad);
-							}
+							printf("Para modificar el valor de la conductividad hasta %f se necesitara desionizar el agua de la fuente ",cambioconductividad);
+						}
 					}else if(difconduc>0){
 						printf("La diferencia de las conductividades es %.2f\n",difconduc);
 						if(valorconductividad<cambioconductividad){
-							printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambioconductividad);
+								printf("Para modificar el valor de la conductividad hasta %f se necesitara ionizar el agua de la fuentge ",cambioconductividad);
 						}else if(valorconductividad>cambioconductividad){
-							printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambioconductividad);
-							}
+							printf("Para modificar el valor de la conductividad hasta %f se necesitara desionizar el agua de la fuente ",cambioconductividad);
+						}
 						}
 					}else if(parametros[f].nconductividad>=500){
 						difturb=cambioconductividad-(float)valorconductividad;
@@ -950,16 +950,16 @@ float compararfuentes(FILE *fentrada) {
 							difturb=-difturb;
 							printf("La diferencia de las conductividades es %.2f\n",difconduc);
 							if(valorturbidez<cambioturbidez){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambioturbidez);
+								printf("Para modificar el valor de la turbidez hasta %f se necesitara aplicar ",cambioturbidez);
 							}else if(valorturbidez>cambioturbidez){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambioturbidez);
+								printf("Para modificar el valor de la turbidez hasta %f se necesitara aplicar ",cambioturbidez);
 							}
 						}else if(difturb>0){
 							printf("La diferencia de las conductividades es %.2f\n",difturb);
 							if(valorturbidez<cambioturbidez){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambioturbidez);
+								printf("Para modificar el valor de la turbidez hasta %f se necesitara aplicar ",cambioturbidez);
 							}else if(valorturbidez>cambioturbidez){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambioturbidez);
+								printf("Para modificar el valor de la turbidez hasta %f se necesitara aplicar ",cambioturbidez);
 							}
 						}
 						}else if(parametros[f].nturbidez>5){
@@ -968,16 +968,16 @@ float compararfuentes(FILE *fentrada) {
 								difturb=-difturb;
 								printf("La diferencia de las conductividades es %.2f\n",difturb);
 								if(valorturbidez<cambioturbidez){
-									printf("Para modificar el valor de la conductividad hasta %f se necesitara ionizar el agua de la fuentge ",cambioturbidez);
+									printf("Para modificar el valor de la turbidez hasta %f se necesitara ionizar el agua de la fuentge ",cambioturbidez);
 								}else if(valorturbidez>cambioturbidez){
-									printf("Para modificar el valor de la conductividad hasta %f se necesitara desionizar el agua de la fuente ",cambioturbidez);
+									printf("Para modificar el valor de la turbidez hasta %f se necesitara desionizar el agua de la fuente ",cambioturbidez);
 								}
 						}else if(difturb>0){
 							printf("La diferencia de las conductividades es %.2f\n",difturb);
 							if(valorturbidez<cambioturbidez){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara ionizar el agua de la fuentge ",cambioturbidez);
+								printf("Para modificar el valor de la turbidez hasta %f se necesitara ionizar el agua de la fuentge ",cambioturbidez);
 							}else if(valorturbidez>cambioturbidez){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara desionizar el agua de la fuente ",cambioturbidez);
+								printf("Para modificar el valor de la turbidez hasta %f se necesitara desionizar el agua de la fuente ",cambioturbidez);
 							}
 						}
 					}
@@ -1008,16 +1008,16 @@ float compararfuentes(FILE *fentrada) {
 							difcolif=-difcolif;
 							printf("La diferencia de las conductividades es %.2f\n",difcolif);
 							if(valorcoliformes<cambiocoliformes){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %f se necesitara aplicar ",cambiocoliformes);
 							}else if(valorcoliformes>cambiocoliformes){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %f se necesitara aplicar ",cambiocoliformes);
 							}
 						}else if(difcolif>0){
 							printf("La diferencia de las conductividades es %.2f\n",difcolif);
 							if(valorcoliformes<cambiocoliformes){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %f se necesitara aplicar ",cambiocoliformes);
 							}else if(valorcoliformes>cambiocoliformes){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara aplicar ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %f se necesitara aplicar ",cambiocoliformes);
 							}
 						}
 						}else if(parametros[f].ncoliformes>2){
@@ -1026,16 +1026,16 @@ float compararfuentes(FILE *fentrada) {
 								difcolif=-difcolif;
 								printf("La diferencia de las conductividades es %.2f\n",difcolif);
 								if(valorcoliformes<cambiocoliformes){
-									printf("Para modificar el valor de la conductividad hasta %f se necesitara ionizar el agua de la fuentge ",cambiocoliformes);
+									printf("Para modificar el valor de los coliformes hasta %f se necesitara ionizar el agua de la fuentge ",cambiocoliformes);
 								}else if(valorturbidez>cambiocoliformes){
-									printf("Para modificar el valor de la conductividad hasta %f se necesitara desionizar el agua de la fuente ",cambiocoliformes);
+									printf("Para modificar el valor de los coliformes hasta %f se necesitara desionizar el agua de la fuente ",cambiocoliformes);
 								}
 						}else if(difcolif>0){
 							printf("La diferencia de las conductividades es %.2f\n",difcolif);
 							if(valorcoliformes<cambiocoliformes){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara ionizar el agua de la fuentge ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %f se necesitara ionizar el agua de la fuentge ",cambiocoliformes);
 							}else if(valorcoliformes>cambiocoliformes){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara desionizar el agua de la fuente ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %f se necesitara desionizar el agua de la fuente ",cambiocoliformes);
 							}
 						}
 					}
