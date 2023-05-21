@@ -673,7 +673,7 @@ float mejorfuente(FILE *fentrada) {
 	}
 	i++;
 	}
-	printf("Basándonos en los valores de sus parámetros, la mejor fuente es la fuente %d con una puntuación de: %f\n", a, valormax);
+	printf("Basándonos en los valores de sus parámetros, la mejor fuente es la fuente %d\n", a);
 	return valortotal;
 }
 
@@ -732,7 +732,7 @@ float peorfuente(FILE *fentrada) {
 	}
 	i++;
 	}
-	printf("Basándonos en los valores de sus parámetros, la peor fuente es la fuente %d con una puntuación de: %f\n", a, valormin);
+	printf("Basándonos en los valores de sus parámetros, la peor fuente es la fuente %d\n", a);
 	return valortotal;
 }
 
@@ -1057,7 +1057,7 @@ fclose(fentrada);
 	
 	FILE *fentrada, *fsalida;
 	
-	do{printf("\nBuenos días,introduzca con número lo que deseas hacer en este programa\n1.Guardar nuevos datos\n2.Guardar datos de un fichero en otro\n3.Mostrar un fichero por pantalla\n4.Realizar estadísticas\n5.Comprobar si las fuente están aceptadas por la OMS\n\nPulse cualquier otra tecla para salir\n");
+	do{printf("\nBuenos días,introduzca con número lo que deseas hacer en este programa\n1.Guardar nuevos datos\n2.Guardar datos de un fichero en otro\n3.Mostrar un fichero por pantalla\n4.Realizar estadísticas\n\nPulse cualquier otra tecla para salir\n");
 	scanf("%d",&elec);
 	
 	switch(elec){
