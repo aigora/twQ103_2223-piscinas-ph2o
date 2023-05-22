@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <locale.h> //biblioteca que permite escribir tildes sin que de error el programa
+#include <locale.h> 
 #include <math.h>	
 #define TAM_MAX 200
 
@@ -19,7 +19,7 @@ float valorminph(FILE *fentrada) {
 
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -47,7 +47,7 @@ float valorminph(FILE *fentrada) {
 
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -75,7 +75,7 @@ float valorminph(FILE *fentrada) {
 
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -102,7 +102,7 @@ float valorminph(FILE *fentrada) {
 
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -130,7 +130,7 @@ float valorminph(FILE *fentrada) {
    
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -157,7 +157,7 @@ float valorminph(FILE *fentrada) {
     
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -184,7 +184,7 @@ float valorminph(FILE *fentrada) {
 
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 	
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -211,7 +211,7 @@ float valorminph(FILE *fentrada) {
 
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -237,7 +237,7 @@ float valorminph(FILE *fentrada) {
 
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 	
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -270,7 +270,7 @@ float valorminph(FILE *fentrada) {
    
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r");
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -302,7 +302,7 @@ float valorminph(FILE *fentrada) {
 
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -334,7 +334,7 @@ float valorminph(FILE *fentrada) {
 
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -365,7 +365,7 @@ float valorminph(FILE *fentrada) {
    
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 	
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -391,7 +391,7 @@ float valorminph(FILE *fentrada) {
     
        	printf("Introduce el nombre del fichero que contiene los datos\n");
 		scanf("%s",nombreFichero);
-		fentrada = fopen(nombreFichero,"r"); // leyendo	
+		fentrada = fopen(nombreFichero,"r");	
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -415,7 +415,7 @@ float valorminph(FILE *fentrada) {
     
        	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 	
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -439,7 +439,7 @@ float valorminph(FILE *fentrada) {
     
        	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 	
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -464,7 +464,7 @@ float valorminph(FILE *fentrada) {
     
     printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     if (fentrada == NULL) {
 	    printf("Error, no puede abrir el fichero.\n");
@@ -505,7 +505,7 @@ float valorminph(FILE *fentrada) {
     
     printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     if (fentrada == NULL) {
 	    printf("Error, no puede abrir el fichero.\n");
@@ -544,7 +544,7 @@ float valorminph(FILE *fentrada) {
     
     printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 	
 	
     if (fentrada == NULL) {
 	    printf("Error, no puede abrir el fichero.\n");
@@ -584,7 +584,7 @@ float valorminph(FILE *fentrada) {
     
     printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r"); 
 	
     if (fentrada == NULL) {
 	    printf("Error, no puede abrir el fichero.\n");
@@ -625,7 +625,7 @@ float mejorfuente(FILE *fentrada) {
     
        	printf("Introduce el nombre del fichero que contiene los datos\n");
 		scanf("%s",nombreFichero);
-		fentrada = fopen(nombreFichero,"r"); // leyendo	
+		fentrada = fopen(nombreFichero,"r");
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -633,7 +633,6 @@ float mejorfuente(FILE *fentrada) {
    
 	fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
 	while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
-	//if ph
 	if(parametros[i].nph>7 && parametros[i].nph<8.5){
 		valorph = 20;
 	} else if(parametros[i].nph>8.5){
@@ -641,13 +640,11 @@ float mejorfuente(FILE *fentrada) {
 	} else{
 		valorph = 5;
 	}
-	//if conductividad
 	if(parametros[i].nconductividad>50 && parametros[i].nconductividad<500){
 		valorconduc = 20;
 	} else{
 		valorconduc = 5; 
 	}
-	//if coliformes
 	if(parametros[i].ncoliformes>0 && parametros[i].ncoliformes<2){
 		valorcol = 10;
 	} else if(parametros[i].ncoliformes == 0){
@@ -655,7 +652,6 @@ float mejorfuente(FILE *fentrada) {
 	} else{
 		valorcol = 5;
 	}
-	//if turbidez
     if(parametros[i].nturbidez>=1 && parametros[i].nturbidez<5){
     	valorturb = 10;
 	} else if(parametros[i].nturbidez>0 && parametros[i].nturbidez<1){
@@ -685,7 +681,7 @@ float peorfuente(FILE *fentrada) {
     
        	printf("Introduce el nombre del fichero que contiene los datos\n");
 		scanf("%s",nombreFichero);
-		fentrada = fopen(nombreFichero,"r"); // leyendo	
+		fentrada = fopen(nombreFichero,"r");
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -693,7 +689,6 @@ float peorfuente(FILE *fentrada) {
    
 	fscanf(fentrada, "%s %s %s %s %s", &parametros[i].fuente, &parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente,&parametros[i].fuente);
 	while(fscanf(fentrada, "%s %f %d %d %d", &parametros[i].fuente, &parametros[i].nph,&parametros[i].nconductividad,&parametros[i].nturbidez,&parametros[i].ncoliformes) != EOF){
-	//if ph
 	if(parametros[i].nph>7 && parametros[i].nph<8.5){
 		valorph = 20;
 	} else if(parametros[i].nph>8.5){
@@ -701,13 +696,11 @@ float peorfuente(FILE *fentrada) {
 	} else{
 		valorph = 5;
 	}
-	//if conductividad
 	if(parametros[i].nconductividad>50 && parametros[i].nconductividad<500){
 		valorconduc = 20;
 	} else{
 		valorconduc = 5; 
 	}
-	//if coliformes
 	if(parametros[i].ncoliformes>0 && parametros[i].ncoliformes<2){
 		valorcol = 10;
 	} else if(parametros[i].ncoliformes == 0){
@@ -715,7 +708,6 @@ float peorfuente(FILE *fentrada) {
 	} else{
 		valorcol = 5;
 	}
-	//if turbidez
     if(parametros[i].nturbidez>=1 && parametros[i].nturbidez<5){
     	valorturb = 10;
 	} else if(parametros[i].nturbidez>0 && parametros[i].nturbidez<1){
@@ -744,7 +736,7 @@ float compararfuentes(FILE *fentrada) {
     
        	printf("Introduce el nombre del fichero que contiene los datos\n");
 		scanf("%s",nombreFichero);
-		fentrada = fopen(nombreFichero,"r"); // leyendo	
+		fentrada = fopen(nombreFichero,"r"); 
 	
     	if (fentrada == NULL) {
 	    	printf("Error, no puede abrir el fichero.\n");
@@ -756,7 +748,7 @@ float compararfuentes(FILE *fentrada) {
     }
 	printf("Introduzca las fuentes que desea comparar:\n");
 	scanf("%d" "%d", &b, &c);
-	//comparacion ph
+
 	if(parametros[b].nph > parametros[c].nph){
 		printf("El ph de la fuente %d es %.2f y es mayor que el ph de la fuente %d, que es %.2f\n", b, parametros[b].nph, c, parametros[c].nph);
 	} else if(parametros[b].nph < parametros[c].nph){
@@ -764,7 +756,7 @@ float compararfuentes(FILE *fentrada) {
 	} else{
 		printf("Los valores del ph de las fuentes %d y %d son iguales con un valor de: %.2f\n", b, c, parametros[b].nph);
 	}
-	//comparacion conductividad
+
 	if(parametros[b].nconductividad > parametros[c].nconductividad){
 		printf("La conductividad de la fuente %d es %d y es mayor que la conductividad de la fuente %d, que es %d\n", b, parametros[b].nconductividad, c, parametros[c].nconductividad);
 	} else if(parametros[b].nconductividad < parametros[c].nconductividad){
@@ -772,7 +764,7 @@ float compararfuentes(FILE *fentrada) {
 	} else{
 		printf("Los valores de conductividad de las fuentes %d y %d son iguales con un valor de: %f\n", b, c, parametros[b].nconductividad);
 	}
-	//comparacion turbidez
+
 	if(parametros[b].nturbidez > parametros[c].nturbidez){
 		printf("La turbidez de la fuente %d es %d y es mayor que la turbidez de la fuente %d, que es %d\n", b, parametros[b].nturbidez, c, parametros[c].nturbidez);
 	} else if(parametros[b].nturbidez < parametros[c].nturbidez){
@@ -780,7 +772,6 @@ float compararfuentes(FILE *fentrada) {
 	} else{
 		printf("Los valores de turbidez de las fuentes %d y %d son iguales con un valor de %d\n", b, c, parametros[b].nturbidez);
 	}
-	//comparacion coliformes
 	if(parametros[b].ncoliformes > parametros[c].ncoliformes){
 		printf("El número de coliformes de la fuente %d es %d y es mayor que el número de coliformes de la fuente %d, que son %d\n", b, parametros[b].ncoliformes, c, parametros[c].ncoliformes);
 	} else if(parametros[b].ncoliformes < parametros[c].ncoliformes){
@@ -815,19 +806,34 @@ float compararfuentes(FILE *fentrada) {
   		valorturbidez=parametros[f].nturbidez;
   		valorcoliformes=parametros[f].ncoliformes;
  		printf("Estos son los valores de la fuente seleccionada %f %d %d %d \n", valorph,valorconductividad,valorturbidez,valorcoliformes);
+ 		do{
  		printf("Introduce el parametro a cambiar:\n1.Ph\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
  		scanf("%d",&cambio);
- 		
+		 }while(cambio<1 || cambio>4);
  		switch(cambio){
  			case 1:{
- 				printf("Introduce el ph al que se quiere cambiar:");
- 				scanf("%f",&phcambio);
- 				if(phcambio<7||phcambio>8){
- 					printf("El valor al que quiere cambiar esta fuera de los parámetros recomendados por sanidad\n");
- 					do{
- 						printf("Como el valor al que se desea cambiar esta fuera de los parametros recomendados por la OMS esta seguro que desea seguir de ser asi pulse 1 si quiere cambiar el valor de cambio pulse 2\n");
- 						scanf("%d",&elecc);
-					}while(elecc>2 ||elecc<1);
+ 				do{
+ 					printf("Introduce el ph al que se quiere cambiar:");
+ 					scanf("%f",&phcambio);
+ 					if(phcambio==valorph){
+ 						printf("Estas introduciendo el mismo valor por favor introduzca de nuevo el valor al que se desea cambiar \n");
+ 						scanf("%f",&phcambio); 
+					 }
+				 }while(phcambio<0 || phcambio>14);
+				if(phcambio<7||phcambio>8.5){
+ 						printf("El valor al que quiere cambiar esta fuera de los parámetros recomendados por sanidad\n");
+ 						do{
+ 							if(phcambio<7||phcambio>8.5){
+ 							printf("Como el valor al que se desea cambiar esta fuera de los parametros recomendados por la OMS esta seguro que desea seguir de ser asi pulse 1 si quiere cambiar el valor de cambio pulse cualquier tecla\n");
+ 							scanf("%d",&elecc);
+ 							if(elecc==2){
+ 								printf("Vuelva a introducir el valor del ph al que se quiere cambiar");
+ 								scanf("%f",&phcambio);
+							 }
+							 }else{
+							 	elecc=1;
+							 }
+						}while(elecc!=1);
 					}
 	  			if(parametros[f].nph<7){
 					printf("%f",valorph);	
@@ -838,17 +844,17 @@ float compararfuentes(FILE *fentrada) {
 						printf("La diferencia de los ph es %.2f\n",difph);
 						gramosne=274-(36*difph);
 						if(valorph<phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar aproximdamente %.2f bicarbonato de sodio",phcambio,gramosne);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar aproximdamente %.2f gramos de bicarbonato de sodio",phcambio,gramosne);
 						}else if(valorph>phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar aproximadamente %.2f ácido muriático",phcambio,gramosne);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar aproximadamente %.2f gramos de ácido muriático",phcambio,gramosne);
 							}
 					}else if(difph>0){
-						printf("La diferencia de ph es %f",difph);
+						printf("La diferencia de ph es %.2f",difph);
 						gramosne=274-(36*difph);
 						if(valorph<phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar %.2f bicarbonato de sodio",phcambio,gramosne);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar aproximadamente %.2f gramos de bicarbonato de sodio",phcambio,gramosne);
 						}else if(valorph>phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar  %.2f ácido muriático",phcambio,gramosne);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar  aproximadamente %.2f gramos de ácido muriático",phcambio,gramosne);
 							}
 						}
 					}else if(parametros[f].nph>=7){
@@ -859,53 +865,62 @@ float compararfuentes(FILE *fentrada) {
 							difph=-difph;
 							gramosne=274-(36*difph);
 						if(valorph<phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar %.2f bicarbonato de sodio",phcambio,gramosne);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar aproximadamente %.2f gramos de bicarbonato de sodio",phcambio,gramosne);
 						}else if(valorph>phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar  %.2f ácido muriático",phcambio,gramosne);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar  aproximadamente %.2f gramos de ácido muriático",phcambio,gramosne);
 							}
 						}else if(difph>0){
-						printf("La diferencia de ph es %f",difph);
+						printf("La diferencia de ph es %.2f",difph);
 						gramosne=274-(36*difph);
 						if(valorph<phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar %.2f bicarbonato de sodio",phcambio,gramosne);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar aproximadamente %.2f gramos de bicarbonato de sodio",phcambio,gramosne);
 						}else if(valorph>phcambio){
-							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar  %.2f ácido muriático",phcambio,gramosne);
+							printf("Para modificar el valor del ph hasta %f de la fuente se necesitaran aplicar aproximadamente  %.2f gramos de ácido muriático",phcambio,gramosne);
 							}
 						}
 					}
 					break;
 					}
 			case 2:{
+				do{
 				printf("Introduce la conductividad a la que se quiere cambiar:");
  				scanf("%f",&cambioconductividad);
+ 				if(cambioconductividad==valorconductividad){
+ 						printf("Estas introduciendo el mismo valor por favor introduzca de nuevo el valor al que se desea cambiar \n");
+ 						scanf("%f",&cambioconductividad); 
+					 }
+				 }while(cambioconductividad<0);
  				if(cambioconductividad<50||cambioconductividad>500){
- 					printf("El valor al que quiere cambiar esta fuera de los parámetros recomendados por sanidad\n");
- 					do{
- 						printf("Como el valor al que se desea cambiar esta fuera de los parametros recomendados por la OMS esta seguro que desea seguir de ser asi pulse 1 si quiere cambiar el valor de cambio pulse 2\n");
- 						scanf("%d",&elecc);
- 						if(elecc==2){
- 							printf("Vuelva a introducir el valor de la conductividad al que se quiere cambiar");
- 							scanf("%f",&cambioconductividad);
-						 }
-					}while(elecc!=2 ||elecc!=1);
+ 						printf("El valor al que quiere cambiar esta fuera de los parámetros recomendados por sanidad\n");
+ 						do{
+ 							if(cambioconductividad<50||cambioconductividad>500){
+ 							printf("Como el valor al que se desea cambiar esta fuera de los parametros recomendados por la OMS esta seguro que desea seguir de ser asi pulse 1 si quiere cambiar el valor de cambio pulse cualquier tecla\n");
+ 							scanf("%d",&elecc);
+ 							if(elecc==2){
+ 								printf("Vuelva a introducir el valor de la conductividad al que se quiere cambiar");
+ 								scanf("%f",&cambioconductividad);
+							 }
+							 }else{
+							 	elecc=1;
+								 }
+						}while(elecc!=1);
 					}
 	  			if(parametros[f].nconductividad<500){	
 					difconduc=cambioconductividad-(float)valorconductividad;
-					printf("%f",difconduc);
 					if(difconduc<0){
 						difconduc=-difconduc;
 						printf("La diferencia de las conductividades es %.2f\n",difconduc);
 						if(valorconductividad<cambioconductividad){
-							printf("Para modificar el valor de la conductividad hasta %f se necesitara ionizar el agua de la fuentge ",cambioconductividad);
+							printf("Para modificar el valor de la conductividad hasta %.2f se necesitara ionizar el agua de la fuentge ",cambioconductividad);
 						}else if(valorconductividad>cambioconductividad){
-							printf("Para modificar el valor de la conductividad hasta %f se necesitara desionizar el agua de la fuente ",cambioconductividad);
+							printf("Para modificar el valor de la conductividad hasta %.2f se necesitara desionizar el agua de la fuente ",cambioconductividad);
 						}
 					}else if(difconduc>0){
 						printf("La diferencia de las conductividades es %.2f\n",difconduc);
 						if(valorconductividad<cambioconductividad){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara ionizar el agua de la fuentge ",cambioconductividad);
+								printf("Para modificar el valor de la conductividad hasta %.2f se necesitara ionizar el agua de la fuentge ",cambioconductividad);
 						}else if(valorconductividad>cambioconductividad){
-							printf("Para modificar el valor de la conductividad hasta %f se necesitara desionizar el agua de la fuente ",cambioconductividad);
+							printf("Para modificar el valor de la conductividad hasta %.2f se necesitara desionizar el agua de la fuente ",cambioconductividad);
 						}
 						}
 					}else if(parametros[f].nconductividad>=500){
@@ -914,71 +929,81 @@ float compararfuentes(FILE *fentrada) {
 							difconduc=-difconduc;
 							printf("La diferencia de las conductividades es %.2f\n",difconduc);
 							if(valorconductividad<cambioconductividad){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara ionizar el agua de la fuentge ",cambioconductividad);
+								printf("Para modificar el valor de la conductividad hasta %.2f se necesitara ionizar el agua de la fuentge ",cambioconductividad);
 							}else if(valorconductividad>cambioconductividad){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara desionizar el agua de la fuente ",cambioconductividad);
+								printf("Para modificar el valor de la conductividad hasta %.2f se necesitara desionizar el agua de la fuente ",cambioconductividad);
 							}
 						}else if(difconduc>0){
 							printf("La diferencia de las conductividades es %.2f\n",difconduc);
 							if(valorconductividad<cambioconductividad){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara ionizar el agua de la fuentge ",cambioconductividad);
+								printf("Para modificar el valor de la conductividad hasta %.2f se necesitara ionizar el agua de la fuentge ",cambioconductividad);
 							}else if(valorconductividad>cambioconductividad){
-								printf("Para modificar el valor de la conductividad hasta %f se necesitara desionizar el agua de la fuente ",cambioconductividad);
+								printf("Para modificar el valor de la conductividad hasta %.2f se necesitara desionizar el agua de la fuente ",cambioconductividad);
 							}
 						}
 					}
 					break;
 				}
 			case 3: {
-					printf("Introduce la conductividad a la que se quiere cambiar:");
+				do{
+					printf("Introduce la turbidez a la que se quiere cambiar:");
  					scanf("%f",&cambioturbidez);
- 					if(cambioturbidez>5){
+ 					if(cambioturbidez==valorturbidez){
+ 						printf("Estas introduciendo el mismo valor por favor introduzca de nuevo el valor al que se desea cambiar \n");
+ 						scanf("%f",&cambioturbidez); 
+					 }
+				}while(cambioturbidez<0);
+				
+					if(cambioturbidez>5){
  						printf("El valor al que quiere cambiar esta fuera de los parámetros recomendados por sanidad\n");
  						do{
+ 							if(cambiocoliformes>2){
  							printf("Como el valor al que se desea cambiar esta fuera de los parametros recomendados por la OMS esta seguro que desea seguir de ser asi pulse 1 si quiere cambiar el valor de cambio pulse cualquier tecla\n");
  							scanf("%d",&elecc);
  							if(elecc==2){
  								printf("Vuelva a introducir el valor de la turbidez al que se quiere cambiar");
  								scanf("%f",&cambioturbidez);
 							 }
+							 }else{
+							 	elecc=1;
+								 }
 						}while(elecc!=1);
-					}
+						}
 					if(parametros[f].nturbidez<=5){	
 						difturb=cambioturbidez-(float)valorturbidez;
-						printf("%f",difconduc);
 						if(difturb<0){
 							difturb=-difturb;
-							printf("La diferencia de las conductividades es %.2f\n",difconduc);
+							printf("La diferencia de la turbidez es %.2f\n",difturb);
 							if(valorturbidez<cambioturbidez){
-								printf("Para modificar el valor de la turbidez hasta %f se necesitara aplicar ",cambioturbidez);
+								printf("Para modificar el valor de la turbidez hasta %.2f se necesitara aplicar un trasbase de agua de una que fuente que posea un mayor valor \n",cambioturbidez);
 							}else if(valorturbidez>cambioturbidez){
-								printf("Para modificar el valor de la turbidez hasta %f se necesitara aplicar ",cambioturbidez);
+								printf("Para modificar el valor de la turbidez hasta %.2f se necesitara aplicar una filtración al agua\n",cambioturbidez);
 							}
 						}else if(difturb>0){
 							printf("La diferencia de las conductividades es %.2f\n",difturb);
 							if(valorturbidez<cambioturbidez){
-								printf("Para modificar el valor de la turbidez hasta %f se necesitara aplicar ",cambioturbidez);
+								printf("Para modificar el valor de la turbidez hasta %.2f se necesitara aplicar un trasbase de agua de una que fuente que posea un mayor valor \n",cambioturbidez);
 							}else if(valorturbidez>cambioturbidez){
-								printf("Para modificar el valor de la turbidez hasta %f se necesitara aplicar ",cambioturbidez);
+								printf("Para modificar el valor de la turbidez hasta %.2f necesitara aplicar una filtración al agua\n",cambioturbidez);
 							}
 						}
 						}else if(parametros[f].nturbidez>5){
 							difturb=cambioturbidez-(float)valorturbidez;
 							if(difturb<0){
 								difturb=-difturb;
-								printf("La diferencia de las conductividades es %.2f\n",difturb);
+								printf("La diferencia de la turbidez es %.2f\n",difturb);
 								if(valorturbidez<cambioturbidez){
-									printf("Para modificar el valor de la turbidez hasta %f se necesitara ionizar el agua de la fuentge ",cambioturbidez);
+									printf("Para modificar el valor de la turbidez hasta %.2f se necesitara aplicar un trasbase de agua de una que fuente que posea un mayor valor\n",cambioturbidez);
 								}else if(valorturbidez>cambioturbidez){
-									printf("Para modificar el valor de la turbidez hasta %f se necesitara desionizar el agua de la fuente ",cambioturbidez);
+									printf("Para modificar el valor de la turbidez hasta %.2f se necesitara aplicar una filtración al agua\n",cambioturbidez);
 								}
 						}else if(difturb>0){
-							printf("La diferencia de las conductividades es %.2f\n",difturb);
+							printf("La diferencia de la turbidez es %.2f\n",difturb);
 							if(valorturbidez<cambioturbidez){
-								printf("Para modificar el valor de la turbidez hasta %f se necesitara ionizar el agua de la fuentge ",cambioturbidez);
-							}else if(valorturbidez>cambioturbidez){
-								printf("Para modificar el valor de la turbidez hasta %f se necesitara desionizar el agua de la fuente ",cambioturbidez);
-							}
+									printf("Para modificar el valor de la turbidez hasta %.2f se necesitara aplicar un trasbase de agua de una que fuente que posea un mayor valor\n",cambioturbidez);
+								}else if(valorturbidez>cambioturbidez){
+									printf("Para modificar el valor de la turbidez hasta %.2f se necesitara aplicar una filtración al agua\n",cambioturbidez);
+								}
 						}
 					}
 					break;
@@ -987,37 +1012,40 @@ float compararfuentes(FILE *fentrada) {
 					printf("Introduce los coliformes a los que se quiere cambiar:");
  					scanf("%f",&cambiocoliformes);
  					if(cambiocoliformes==valorcoliformes){
- 						printf("Estas introduciendo el mismo valor por favor introduzca de nuevo el valor al que se desea cambiar ");
- 						scanf("%f",cambiocoliformes); 
+ 						printf("Estas introduciendo el mismo valor por favor introduzca de nuevo el valor al que se desea cambiar \n");
+ 						scanf("%f",&cambiocoliformes); 
 					 }
  					if(cambiocoliformes>2){
  						printf("El valor al que quiere cambiar esta fuera de los parámetros recomendados por sanidad\n");
  						do{
+ 							if(cambiocoliformes>2){
  							printf("Como el valor al que se desea cambiar esta fuera de los parametros recomendados por la OMS esta seguro que desea seguir de ser asi pulse 1 si quiere cambiar el valor de cambio pulse cualquier tecla\n");
  							scanf("%d",&elecc);
  							if(elecc==2){
- 								printf("Vuelva a introducir el valor de la turbidez al que se quiere cambiar");
+ 								printf("Vuelva a introducir el valor de los coliformes al que se quiere cambiar\n");
  								scanf("%f",&cambiocoliformes);
 							 }
+							 }else{
+							 	elecc=1;
+							}
 						}while(elecc!=1);
 					}
 					if(parametros[f].ncoliformes<=2){	
 						difcolif=cambiocoliformes-(float)valorcoliformes;
-						printf("%f",difcolif);
 						if(difcolif<0){
 							difcolif=-difcolif;
 							printf("La diferencia de las conductividades es %.2f\n",difcolif);
 							if(valorcoliformes<cambiocoliformes){
-								printf("Para modificar el valor de los coliformes hasta %f se necesitara aplicar ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %.2f se necesitara aplicar un trasbase de agua de una que fuente que posea un mayor valor \n",cambiocoliformes);
 							}else if(valorcoliformes>cambiocoliformes){
-								printf("Para modificar el valor de los coliformes hasta %f se necesitara aplicar ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %.2f se necesitara aplicar luz ultravioleta\n",cambiocoliformes);
 							}
 						}else if(difcolif>0){
 							printf("La diferencia de las conductividades es %.2f\n",difcolif);
 							if(valorcoliformes<cambiocoliformes){
-								printf("Para modificar el valor de los coliformes hasta %f se necesitara aplicar ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %.2f se necesitara aplicar un trasbase de agua de una que fuente que posea un mayor valor  \n",cambiocoliformes);
 							}else if(valorcoliformes>cambiocoliformes){
-								printf("Para modificar el valor de los coliformes hasta %f se necesitara aplicar ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %.2f se necesitara aplicar luz ultravioleta\n",cambiocoliformes);
 							}
 						}
 						}else if(parametros[f].ncoliformes>2){
@@ -1026,16 +1054,16 @@ float compararfuentes(FILE *fentrada) {
 								difcolif=-difcolif;
 								printf("La diferencia de las conductividades es %.2f\n",difcolif);
 								if(valorcoliformes<cambiocoliformes){
-									printf("Para modificar el valor de los coliformes hasta %f se necesitara ionizar el agua de la fuentge ",cambiocoliformes);
+									printf("Para modificar el valor de los coliformes hasta %.2f se necesitara aplicar un trasbase de agua de una que fuente que posea un mayor valor \n",cambiocoliformes);
 								}else if(valorturbidez>cambiocoliformes){
-									printf("Para modificar el valor de los coliformes hasta %f se necesitara desionizar el agua de la fuente ",cambiocoliformes);
+									printf("Para modificar el valor de los coliformes hasta %.2f se necesitara aplicar luz ultravioleta\n",cambiocoliformes);
 								}
 						}else if(difcolif>0){
 							printf("La diferencia de las conductividades es %.2f\n",difcolif);
 							if(valorcoliformes<cambiocoliformes){
-								printf("Para modificar el valor de los coliformes hasta %f se necesitara ionizar el agua de la fuentge ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %.2f se necesitara un trasbase de agua de una que fuente que posea un mayor valor  \n",cambiocoliformes);
 							}else if(valorcoliformes>cambiocoliformes){
-								printf("Para modificar el valor de los coliformes hasta %f se necesitara desionizar el agua de la fuente ",cambiocoliformes);
+								printf("Para modificar el valor de los coliformes hasta %.2f se necesitara aplicar luz ultravioleta \n",cambiocoliformes);
 							}
 						}
 					}
@@ -1048,7 +1076,7 @@ fclose(fentrada);
 
     
 	int main(){
-	setlocale(LC_CTYPE, "spanish"); //permite utilizar tildes
+	setlocale(LC_CTYPE, "spanish"); 
 	
 	struct Tfuentes parametros[TAM_MAX];
 	char nombreFichero[200];
@@ -1069,7 +1097,7 @@ fclose(fentrada);
 	printf("Introduce el número de fuentes que quieres guardar: ");
 	scanf("%i",&nfuentes);
 
-	fsalida = fopen(nombreFichero, "w"); // escibiendo
+	fsalida = fopen(nombreFichero, "w");
 	if (fsalida == NULL) {
 	printf("Error en la apertura del fichero de salida\n");}
 	fprintf(fsalida, "Fuentes\t pH\t Conductividad\t Turbidez\t Coliformes\t\n");
@@ -1157,7 +1185,7 @@ fclose(fentrada);
    	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
 	
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r");
 	if (fentrada == NULL) {
 		printf("Error, no puede abrir el fichero.\n");
 		return 0;}
@@ -1165,7 +1193,7 @@ fclose(fentrada);
 	printf("Introduce el nombre del archivo donde quieres guardar los datos: ");
     scanf("%s", nombreFichero);
     
-    fsalida = fopen(nombreFichero,"w"); // escibiendo
+    fsalida = fopen(nombreFichero,"w"); 
 	if (fsalida == NULL) {
 	printf("Error en la apertura del fichero de salida\n");}	
 		
@@ -1186,7 +1214,7 @@ fclose(fentrada);
 	printf("Introduce el nombre del fichero que contiene los datos\n");
 	scanf("%s",nombreFichero);
 	
-	fentrada = fopen(nombreFichero,"r"); // leyendo	
+	fentrada = fopen(nombreFichero,"r");
 	if (fentrada == NULL) {
 		printf("Error, no puede abrir el fichero.\n");
 		return 0;}
@@ -1199,13 +1227,18 @@ fclose(fentrada);
 	break;
    	
 	case 4:{
-	printf("A continuación, escribe lo que quieras hacer con el programa:\n1.Media de alguno de los parámetros\n2.Desviación típica de alguno de los parámetros\n3.Valor máximo o mínimo de alguno de los parámetros\n4.Buscar cuantas veces se repite un parametro\n5.Mejor o peor fuente\n6.Comparar parametros entre 2 fuentes\n7.Corregir valores\n");
-	scanf("%d",&elecdatos);
+		do{
+			printf("A continuación, escribe lo que quieras hacer con el programa:\n1.Media de alguno de los parámetros\n2.Desviación típica de alguno de los parámetros\n3.Valor máximo o mínimo de alguno de los parámetros\n4.Buscar cuantas veces se repite un parametro\n5.Mejor o peor fuente\n6.Comparar parametros entre 2 fuentes\n7.Corregir valores\n");
+			scanf("%d",&elecdatos);
+		}while(elecdatos<1 || elecdatos>7);
+
 	switch(elecdatos){
 		case 1:{ 
+		do{
 			printf("¿De qué parámetro quieres calcular la media?\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
 	        scanf("%d",&elecdatos);
-	        
+		}while(elecdatos<1 || elecdatos>4);
+
 		        switch(elecdatos){
 				    case 1:{
 
@@ -1231,9 +1264,12 @@ fclose(fentrada);
 			}	
 			break;
 		}
-		case 2:{
-			printf("¿De qué parámetro quieres calcular la desviación típica?\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
-	        scanf("%d",&elecdatos);
+		case 2:{	
+			do{
+				printf("¿De qué parámetro quieres calcular la desviación típica?\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
+	      	  	scanf("%d",&elecdatos);
+			}while(elecdatos<1 || elecdatos>4);
+			
 	        
 		        switch(elecdatos){
 				    case 1:{
@@ -1256,13 +1292,18 @@ fclose(fentrada);
 			break;
 		}
 		case 3:{
-			printf("1.Valor máximo\n2.Valor mínimo\n");
-	        scanf("%d",&elecdatos);
+			do{
+				printf("1.Valor máximo\n2.Valor mínimo\n");
+	        	scanf("%d",&elecdatos);
+			}while(elecdatos<1 || elecdatos>2);
+
 	         switch(elecdatos){
 	         	case 1:{	
-				 printf("¿De qué parámetro quieres calcular su valor máximo?\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
-	             scanf("%d",&elecdatos);
-	             
+	         	do{
+	         		printf("¿De qué parámetro quieres calcular su valor máximo?\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
+	             	scanf("%d",&elecdatos);
+				 }while(elecdatos<1 || elecdatos>4);
+
 		        switch(elecdatos){
 				    case 1:{
 					valormax=valormaxph(fentrada);
@@ -1284,9 +1325,11 @@ fclose(fentrada);
 					break;
 				}
 	         	case 2:{
-	         	 printf("¿De qué parámetro quieres calcular su valor mínimo:\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
-	             scanf("%d",&elecdatos);
-	        
+	         			do{
+	         				printf("¿De qué parámetro quieres calcular su valor mínimo:\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
+	             			scanf("%d",&elecdatos);
+						}while(elecdatos<1 || elecdatos>4);
+
 		         switch(elecdatos){
 				    case 1:{
 					valormin=valorminph(fentrada);
@@ -1311,8 +1354,11 @@ fclose(fentrada);
 			break;
 		}
 		case 4:{
-		printf("Con que parametro desea calcular:\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
-		scanf("%d",&elec);
+				do{
+					printf("Con que parametro desea calcular:\n1.pH\n2.Conductividad\n3.Turbidez\n4.Coliformes\n");
+					scanf("%d",&elec);
+				}while(elec<1 || elec>4);
+
 		switch(elec){
 			case 1:{
 		    	contador=contadorpH(fentrada);
@@ -1334,8 +1380,11 @@ fclose(fentrada);
 		break;
 	    }
 		case 5: {
-	    printf("¿Qué desea saber?\n1.Mejor fuente\n2.Peor fuente\n");
-		scanf("%d",&elec);
+			do{
+	  			printf("¿Qué desea saber?\n1.Mejor fuente\n2.Peor fuente\n");
+				scanf("%d",&elec);
+			}while(elec<1 || elec>4);
+
 		switch(elec){
 			case 1:{
 				valortotal=mejorfuente(fentrada);
